@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="swiper-bundle.min.css">
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&family=Ubuntu&display=swap");
+    </style>    
+    <style>
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        height: 320px !important;
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .swiperNavBtn{
+        width: 40px;
+        height: 40px;
+        background: var(--color-5);
+        color: #fff;
+        border-radius: 50%;
+      }
+
+      .swiperNavBtn::before , .swiperNavBtn::after{
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: 850px){
+        .swiperNavBtn{
+          display: none;
+        }
+      }
+    </style>
+      
+    <title>Personal Portfolio</title>
+  </head>
+  <body id="body">
+    <header>
+      <nav>
+        <div class="logo">
+          <h3><i class="fa-solid fa-laptop-code"></i>Developer</h3>
+        </div>
+        <ul id="unorder-list" class="flex">
+          <a href="#home"><li>Home</li></a>
+          <a href="#skills"><li>Skills</li></a>
+          <a href="#projects"><li>Projects</li></a>
+          <a href="#service"><li>Service</li></a>
+        </ul>
+        <div class="dark-box">
+          <i class="fa-solid fa-moon" id="moon"></i>
+          <i class="fa-solid fa-sun" id="sun"></i>
+        </div>
+        <i class="fa-solid fa-bars" id="hamburger"></i>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section id="home">
+        <div class="left-content">
+          <h1>Hello, I'm <span>Awais Mazher</span></h1>
+          <p>
+            I am a professional <span> Front-End Web Developer. </span>I have
+            made alot of websites over the past two years. If you want a
+            responsive website with an amazing design then i'm the man for you.
+          </p>
+          <div class="btn-container">
+            <button class="btn">Hire Me</button>
+            <button class="btn" id="contact-btn">Contact Me</button>
+          </div>
+        </div>
+        <div class="right-image">
+          <img src="profile-pic.jpeg" />
+        </div>
+        <div class="contact-box" id="contact-box">
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <i class="fas fa-paper-plane"></i>
+            <i class="fa-solid fa-circle-xmark" id="cross-icon"></i>
+            <input
+              type="hidden"
+              name="access_key"
+              value="48680444-3924-414c-91c1-30017cb06e27"
+            />
+
+            <div class="input-group">
+              <label>Full Name</label>
+              <input
+                name="name"
+                type="text"
+                placeholder="Enter your name"
+                id="contact-name"
+                onkeyup="validateName()"
+              />
+              <span id="name-error"></span>
+            </div>
+
+            <div class="input-group">
+              <label>Email Id</label>
+              <input
+                name="email"
+                type="email"
+                placeholder="Enter Email"
+                id="contact-email"
+                onkeyup="validateEmail()"
+              />
+              <span id="email-error"></span>
+            </div>
+
+            <div class="input-group">
+              <label>Your Message</label>
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Enter your message"
+                id="contact-message"
+                onkeyup="validateMessage()"
+              ></textarea>
+              <span id="message-error"></span>
+            </div>
+
+            <button onclick="return validateForm()">Submit</button>
+            <span id="submit-error"></span>
+          </form>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="skill-icon flex">
+          <i class="fa-solid fa-code"></i>
+        </div>
+        <h1>My Skills</h1>
+        <div class="skills-container">
+          <div class="skill-box">
+            <div class="logo-box flex">
+              <img src="html-5.png" alt="" width="100px" />
+            </div>
+            <div class="content-box">
+              <h3>Hyper Text Markup Language(HTML)</h3>
+              <p>I have made hundreds of websites with HTML</p>
+              <div class="skill-bar">
+                <div class="progress">80%</div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-box">
+            <div class="logo-box flex">
+              <img src="css-3.png" alt="" width="100px" />
+            </div>
+            <div class="content-box">
+              <h3>Cascading Style Sheet(CSS)</h3>
+              <p>I have made hundreds of websites with CSS</p>
+              <div class="skill-bar">
+                <div class="progress p-2">70%</div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-box">
+            <div class="logo-box flex">
+              <img src="js.png" alt="" width="100px" />
+            </div>
+            <div class="content-box">
+              <h3>Javascript(JS)</h3>
+              <p>I have made alot of websites with JS</p>
+              <div class="skill-bar">
+                <div class="progress p-3">60%</div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-box">
+            <div class="logo-box flex">
+              <img src="bootstrap-logo.png" alt="" width="100px" />
+            </div>
+            <div class="content-box">
+              <h3>Bootstrap</h3>
+              <p>I have used bootstrap in many of my projects</p>
+              <div class="skill-bar">
+                <div class="progress p-4">65%</div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-box">
+            <div class="logo-box flex">
+              <img src="tailwind-css-icon.png" alt="" width="100px" />
+            </div>
+            <div class="content-box">
+              <h3>Tailwind CSS</h3>
+              <p>I have also learned tailwind during my career</p>
+              <div class="skill-bar">
+                <div class="progress p-5">70%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h1>My Projects</h1>
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper projects-container">
+            <div class="swiper-slide">
+              <div class="project-box">
+                <div class="project-image flex">
+                  <i class="fa-brands fa-youtube"></i>
+                </div>
+                <a href="https://awais-mazher.github.io/Youtube" target="_blank"><h3>Youtube Clone</h3></a>
+                <p>
+                  This is a clone of the Youtube website . This is just one of my
+                  many amazing websites. This is a complete responsive clone of
+                  Youtube.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="project-box">
+                <div class="project-image flex">
+                  <i class="fa-brands fa-linkedin"></i>
+                </div>
+                <a
+                  href="https://awais-mazher.github.io/LinkedIn-Clone/"
+                  target="_blank"
+                  ><h3>LinkedIn Clone</h3></a
+                >
+                <p>
+                  This is a clone of the Linkedin website . This is just one of my
+                  many amazing websites. This is a complete responsive clone of
+                  LinkedIn.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="project-box">
+                <div class="project-image flex">
+                  <i class="fa-solid fa-user"></i>
+                </div>
+                <a href="https://awais-mazher.github.io/Portfolio/" target="_blank"
+                  ><h3>Portfolio Website</h3></a
+                >
+                <p>
+                  This is a Portfolio website that I made watching a youtube
+                  tutorial. This was one of my early projects . This is also a
+                  responsive website.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="project-box">
+                <div class="project-image flex">
+                  <i class="fa-solid fa-mug-saucer"></i>
+                </div>
+                <a
+                  href="https://awais-mazher.github.io/Coffee-World/#home"
+                  target="_blank"
+                  ><h3>Coffee Shop Web</h3></a
+                >
+                <p>
+                  This is a Coffee Shop website with a beautiful design . This is
+                  completely responsive.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="project-box">
+                <div class="project-image flex">
+                  <i class="fa-brands fa-bitcoin"></i>
+                </div>
+                <a href="https://awais-mazher.github.io/CryptoKing/" target="_blank"
+                  ><h3>Crypto Website</h3></a
+                >
+                <p>
+                  This is a Crypto Currency website that I recently made for a
+                  client . This is also a responsive website.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="project-box">
+                <div class="project-image flex">
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <a
+                  href="https://awais-mazher.github.io/GoGo-Web-Clone/"
+                  target="_blank"
+                  ><h3>Anime Website</h3></a
+                >
+                <p>
+                  This is a Clone of the GoGo Anime Website that i made for practice
+                  . This is not responsive .
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next swiperNavBtn"></div>
+          <div class="swiper-button-prev swiperNavBtn"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+
+      <section id="service">
+        <h1>My Service</h1>
+        <div class="service-box">
+          <img src="web.jpg" alt="" />
+          <div class="service-content">
+            <h3>Web Development</h3>
+            <p>
+              I can make any type of beautiful Front-End Website keeping your
+              likings in mind and my work will not be completed until you are
+              satisfied
+            </p>
+            <button class="btn">Hire Me</button>
+          </div>
+        </div>
+      </section>
+      
+      <footer>
+        <h3>Made by Awais Mazher</h3>
+      </footer>
+    </main>
+
+    <script src="swiper-bundle.min.js"></script>
+    
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      loop: true,
+      center: true,
+      grabCursor: true,
+      autoplay: {
+        delay: 2000 
+      },
+      navigation: {
+        prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-button-next",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      
+      breakpoints: {
+        850: {
+          slidesPerView: 2,
+          grabCursor: false
+        }
+      }
+    });
+  </script>
+
+    <script>
+      let hamburger = document.getElementById("hamburger");
+      let unorderList = document.getElementById("unorder-list");
+      let body = document.querySelector("body");
+      let sun = document.querySelector("#sun");
+      let moon = document.querySelector("#moon");
+
+      hamburger.addEventListener("click", () => {
+        unorderList.classList.toggle("nav-responsiveness");
+        unorderList.style.transition = "all 0.5s";
+      });
+
+      moon.addEventListener("click", () => {
+        body.classList.add("dark-mode");
+        moon.style.display = "none";
+        sun.style.display = "block";
+        localStorage.setItem("theme", "dark");
+      });
+
+      sun.addEventListener("click", () => {
+        body.classList.remove("dark-mode");
+        sun.style.display = "none";
+        moon.style.display = "block";
+        localStorage.setItem("theme", "light");
+      });
+      
+      if (localStorage.getItem("theme") == "dark") {
+        body.classList.add("dark-mode");
+        moon.style.display = "none";
+        sun.style.display = "block";
+      } else if (localStorage.getItem("theme") == "light") {
+        body.classList.remove("dark-mode");
+        sun.style.display = "none";
+        moon.style.display = "block";
+      }
+      </script>
+      <script src="https://kit.fontawesome.com/9dd113c0da.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
